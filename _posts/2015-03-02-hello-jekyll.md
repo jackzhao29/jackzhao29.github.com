@@ -120,12 +120,12 @@ int main(int argc, char **argv)
 ## 链接
 
 ```
-[链接名称](http://blog.javachen.com)
-<http://blog.javachen.com>
+[链接名称](http://jackzhao29.github.io)
+<http://jackzhao29.github.io>
 ```
 
-[链接名称](http://blog.javachen.com)
-<http://blog.javachen.com>
+[链接名称](jackzhao29.github.io)
+<jackzhao29.github.io>
 
 ## 引用
 
