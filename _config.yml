@@ -1,14 +1,14 @@
 # Site settings
 title : jackzhao Blog
 tagline:
-url:
-author:
+url: http://github.com/jackzhao29
+author: jackzhao
     name:
-    github:
+    github: /jackzhao29
     email:
     twitter:
     facebook:
-    weibo:
+    weibo: u/1981509895
 atom_path: /atom.xml
 rss_path: /rss.xml
 donate_url:
