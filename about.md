@@ -5,7 +5,8 @@ group: navigation
 comment: true
 ---
 
-#### Who I am
+#### 花名：关心
+#### 关注：java、scala、分布式
 
 
 #### Contact me
