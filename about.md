@@ -6,8 +6,8 @@ comment: true
 ---
 
 #### 花名：关心
-#### 关注：java、scala、分布式
-
+#### 关注：java、scala、java performance、分布式、高并发
+#### Email: jack.zhao829@gmail.com
 
 #### Contact me
 
