@@ -9,7 +9,7 @@ tags: [python]
 #### 实现步骤如下：
 * 需要把存储的excel文件转换成CSV文件
 * python `code`
-* 
+
 ```
 import csv 
 reader = csv.reader(open("test.csv")) 
