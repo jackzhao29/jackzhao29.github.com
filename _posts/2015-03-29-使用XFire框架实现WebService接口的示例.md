@@ -12,7 +12,7 @@ tags: [java]
 * 创建IReaderObject接口
 * 创建实现接口ReaderObjectImpl类
 * 在项目的src目录下创建META-INF文件夹，再在META-INF文件夹下创建xfire文件夹，如图1：
-![图1](/static/images//01.jpg)
+![图1](/static/images/01.jpg)
 * 在xfire文件夹下创建service.xml文件，内容如下：
 
 ```
