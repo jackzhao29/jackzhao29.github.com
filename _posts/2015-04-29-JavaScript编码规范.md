@@ -123,7 +123,7 @@ var errorMessage = 'This is a super long error that was thrown because ' +
   'with this, you would get nowhere fast.';
 ```
 * 以编程方式创建字符串的时应该使用Array的join方法而不是通过连接符，尤其是在IE中：jsPerf
-* 
+
 ```
 var items;
 var messages;
