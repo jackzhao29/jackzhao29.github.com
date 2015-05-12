@@ -2,7 +2,7 @@
 layout: post
 title:  "并发框架Disruptor使用"
 keywords: "多线性,并发、disruptor"
-description: "并发框架Disruptor使用"
+description: "Disruptor是一个开源的并发框架，使用事件源驱动方式，能够在无锁的情况下实现网络的Queue并发操作"
 category: concurrency
 tags: [concurrency]
 ---
