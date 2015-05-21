@@ -165,6 +165,7 @@ client-output-buffer-limit pubsub32mb 8mb 60
 hz 10
 31. 指定包含其它的配置文件，可以在同一主机上多个Redis实例之间使用同一份配置文件，而同时各个实例又拥有自己的特定配置文件
 具体请参考：[https://raw.githubusercontent.com/antirez/redis/2.6/redis.conf](https://raw.githubusercontent.com/antirez/redis/2.6/redis.conf)
+
 ### Redis客户端配置
 #### redis.properties
 ```
@@ -236,6 +237,9 @@ public interface CacheService{
 import com.test.cache.CacheServiceImpl
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
  public class CacheServiceImpl implements CacheService {
     private static Logger   logger= LoggerFactory.getLogger(CacheServiceImpl.class);
@@ -271,10 +275,6 @@ import org.slf4j.LoggerFactory;
             pool.returnBrokenResource(jedis);
             throw new CacheException(e);
         }
-    }
-
-    private JedisPool getJedisPool() {
-        return jedisPool;
     }
 
     @Override
@@ -392,6 +392,9 @@ import org.slf4j.LoggerFactory;
     }
     public Int getTimeOut(){
     	return timeOut;
+    }
+      private JedisPool getJedisPool() {
+        return jedisPool;
     }
 }
 ```
