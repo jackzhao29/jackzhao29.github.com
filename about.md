@@ -5,10 +5,10 @@ group: navigation
 comment: true
 ---
 
-#### 花名：关心
-#### 关注：java、scala、java performance、分布式、高并发
-#### Email: jack.zhao829@gmail.com
-
+#### 花名：冷面
+#### 关注：java、scala、python、java performance、分布式、高并发
+#### Email：jack.zhao829@gmail.com
+#### 座右铭：Write the code，Change the world
 #### Contact me
 
 {% if site.author.email %}
