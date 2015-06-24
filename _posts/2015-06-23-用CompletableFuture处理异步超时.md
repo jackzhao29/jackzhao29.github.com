@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "用CompletableFuture处理异步超时问题"
+keywords: "java"
+description: "JDK 8中的新的抽象 – CompletableFuture。众所周知，Java 8不到一年就会发布，CompletableFuture extends Future提供了方法，一元操作符和促进异步性以及事件驱动编程模型，它并不止步于旧版本的Java中。如果你打开JavaDoc of CompletableFuture你一定会感到震惊"
+category: java 
+tags: [java]
+---
 一天，我在改进多线程代码时被`Future.get()`阻塞住了。
 
 ```
