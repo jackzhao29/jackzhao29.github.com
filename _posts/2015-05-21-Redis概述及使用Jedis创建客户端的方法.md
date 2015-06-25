@@ -3,8 +3,8 @@ layout: post
 title:  "Redis概述及使用Jedis创建客户端的方法"
 keywords: "cache, redis,jedis"
 description: "Redis是一个开源的key-value持久化产品，它通常被称为数据结构服务器，它的值可以是字符串（String）、哈希（Map）、列表（List）、集合（Sets）和有序集合（Sorted sets）等类型，可以在这些类型上面做一些原子操作"
-category: others
-tags: [jekyll]
+category: redis
+tags: [redis]
 ---
 ###概述
 Redis是一个开源的key-value持久化产品，它通常被称为数据结构服务器，它的值可以是字符串（String）、哈希（Map）、列表（List）、集合（Sets）和有序集合（Sorted sets）等类型，可以在这些类型上面做一些原子操作，如：字符串追加、增加Hash里面的值、添加元素到列表、计算集合的交集，并集和差集，为了取得好的性能，Redis是一个内存型数据库，不限于此，Redis也可以把数据持久化到磁盘中，或者把数据操作指令追加了一个日志文件，把它用于持久化，也可以用Redis容易的搭建master-slave架构用于数据复制，其它让它像缓存的特性包括，简单的check-and-set机制，pub/sub和配置设置,Redis可以用大部分程序语言来操作：C、C++、C#、Java、Node.js、php、ruby等等，Redis是用ANSIC写的，可以运行在多数POSIX系统。
