@@ -5,8 +5,8 @@ keywords: "liunx,trickle"
 description: "Trickle 是个非常小巧实用的 Linux 命令限流工具，Trickle 可以限制 Linux 命令行工具的上传和下载流量。在跨地域文件传输或者备份时非常有用，因为外网带宽往往会比较贵。
 或者你想备份进程或者下载进程不对同机器的其他服务产生影响，也需要 Trickle 这样的限流工具。
 再或者你在办公室想下载大文件，不希望影响其他网络用户或者应用，Trickle 就是为此设计。"
-category: scala
-tags: [scala]
+category: linux shell
+tags: [linux]
 ---
 #### 什么是Trickle，它能帮助我们干什么
 Trickle 是个非常小巧实用的Linux命令限流工具，Trickle 可以限制 Linux 命令行工具的上传和下载流量。在跨地域文件传输或者备份时非常有用，因为外网带宽往往会比较贵。
