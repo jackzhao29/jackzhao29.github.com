@@ -2,7 +2,7 @@
 layout: post
 title:  "Java类加载器ClassLoader那些事"
 keywords: "Java类加载器,classloader"
-description: "类加载器是 Java 语言的一个创新。它使得动态安装和更新软件组件成为可能。本文详细介绍了类加载器的相关话题，包括基本概念、代理模式、线程上下文类加载器、与 Web 容器和 OSGi 的关系等。开发人员在遇到 ClassNotFoundException和 NoClassDefFoundError等异常的时候，应该检查抛出异常的类的类加载器和当前线程的上下文类加载器，从中可以发现问题的所在。在开发自己的类加载器的时候，需要注意与已有的类加载器组织结构的协调。"
+description: "类加载器是 Java 语言的一个创新。它使得动态安装和更新软件组件成为可能。本文详细介绍了类加载器的相关话题，包括基本概念、体系架构、原理、与 Web 容器关系等。开发人员在遇到 ClassNotFoundException和 NoClassDefFoundError等异常的时候，应该检查抛出异常的类的类加载器和当前线程的上下文类加载器，从中可以发现问题的所在。在开发自己的类加载器的时候，需要注意与已有的类加载器组织结构的协调。"
 category: java	 
 tags: [java]
 ---
@@ -18,11 +18,14 @@ tags: [java]
 
 ### Java默认提供了三个ClassLoader
 
-#### BootStarap ClassLoader:称为启动类加载器，是Java类加载层次中最顶层的类加载器，负责加载JDK中得核心类库。它是用原生代码来实现的，并不继承自java.lang.ClassLoader。
+#### BootStarap ClassLoader
+称为启动类加载器，是Java类加载层次中最顶层的类加载器，负责加载JDK中得核心类库。它是用原生代码来实现的，并不继承自java.lang.ClassLoader。
 
-#### Extension ClassLoader:称为扩展类加载器，负责加载Java的扩展类库，默认加载JAVA_HOME/jre/lib/ext/目下的所有jar。
+#### Extension ClassLoader
+称为扩展类加载器，负责加载Java的扩展类库，默认加载JAVA_HOME/jre/lib/ext/目下的所有jar。
 
-#### App ClassLoader:称为系统类加载器，负责加载应用程序classpath目录下得所有jar和class文件。一般来说，Java 应用的类都是由它来完成加载的。可以通过 ClassLoader.getSystemClassLoader()来获取它。
+#### App ClassLoader
+称为系统类加载器，负责加载应用程序classpath目录下得所有jar和class文件。一般来说，Java 应用的类都是由它来完成加载的。可以通过 ClassLoader.getSystemClassLoader()来获取它。
 
 `注意：`
 除了Java默认提供的三个ClassLoader之外，用户还可以根据需要定义自已的ClassLoader，而这些自定义的ClassLoader都必须继承自java.lang.ClassLoader类，也包括Java提供的另外二个ClassLoader（Extension ClassLoader和App ClassLoader）在内，但是Bootstrap ClassLoader不继承自ClassLoader，因为它不是一个普通的Java类，底层由C++编写，已嵌入到了JVM内核当中，当JVM启动后，Bootstrap ClassLoader也随着启动，负责加载完核心类库后，并构造Extension ClassLoader和App ClassLoader类加载器。
@@ -80,6 +83,7 @@ public class ClassLoaderTest {
 ![图4](/static/images/classloader04.gif)
 
 ### ClassLoader与Web容器
+
 对于运行在 Java EE™容器中的 Web 应用来说，类加载器的实现方式与一般的 Java 应用有所不同。不同的 Web 容器的实现方式也会有所不同。以 Apache Tomcat 来说，每个 Web 应用都有一个对应的类加载器实例。该类加载器也使用代理模式，所不同的是它是首先尝试去加载某个类，如果找不到再代理给父类加载器。这与一般类加载器的顺序是相反的。这是 Java Servlet 规范中的推荐做法，其目的是使得 Web 应用自己的类的优先级高于 Web 容器提供的类。这种代理模式的一个例外是：Java 核心库的类是不在查找范围之内的。这也是为了保证 Java 核心库的类型安全。
 
 绝大多数情况下，Web 应用的开发人员不需要考虑与类加载器相关的细节。下面给出几条简单的原则：
