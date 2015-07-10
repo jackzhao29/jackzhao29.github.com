@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "java出现内存溢出解决方案"
-keywords: "lucene"
+keywords: "java,outofmemoryerror"
 description: "启动tomcat时有时候会出现java.lang.OutOfMemoryError:Java heap space异常"
-category: lucene
-tags: [lucene]
+category: Java
+tags: [Java]
 ---
 #### 如果启动tomcat时出现java.lang.OutOfMemoryError:Java heap space异常时尝试使用下列办法解决<br>
 * 修改Tomcat/bin/catalina.bat,添加如下内容set JAVA_OPTS=-Xms256m -Xmx512m -Djava.awt.headless=true [-XX:MaxPermSize=128M]
